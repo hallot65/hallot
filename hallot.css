@@ -2,7 +2,7 @@ body {
     font-family: "Avenir Next";
   }
 
-.header-list li{
+li{
   list-style: none;
   float:left;
   padding: 33px 20px;
@@ -16,5 +16,6 @@ body {
 
 .header{
     background-color: #d1878b;
-    
+    color: #fff;
+    height: 90px;
 }
