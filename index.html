@@ -1,36 +1,84 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>あるぱか卓</title>
-    <link rel="stylesheet" href="hallot.css">
+    <title>リンク</title>
+    <style>
+        body {
+            font-family: 'Noto Serif JP', serif;
+            margin: 0;
+            padding: 0;
+            background: #c21807;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .profile-container {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            width: 400px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease;
+        }
+
+         .profile-container img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #c21807;
+        }
+        .profile-container h1 {
+            font-size: 1.5em;
+            color: #c21807;
+            margin-top: 10px;
+        }
+
+        .profile-container p {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .link-buttons a {
+            display: inline-block;
+            margin: 8px;
+            padding: 8px 15px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #c21807;
+            border-radius: 10px;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: all 0.3s ease, transform 0.3s ease;
+        }
+
+        .link-buttons a:hover {
+            background-color: #a01606;
+            transform: scale(1.1) translateY(-5px);
+        }
+
+    </style>
 </head>
 <body>
-
-    <div class="header">
-        <div class="header-logo">あるぱか卓</div>
-      <div class="header-list">
-        <ul>
-          <li>通過シナリオ</li>
-          <li>日程</li>
-          <li>探索者一覧</li>
-          <li>豁ｻ菴灘ｮ臥ｽｮ謇</li>
-        </ul>
-      </div>
-    </div>
-
-    
-    <div class="main">
-        <div class = "calender">
-            <iframe src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23d1878b&ctz=Asia%2FTokyo&showNav=0&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH&showDate=1&src=MWRkMTRhZmFiZjhkOTc2MzYwOGMzYjFiZmJlMjg5ZGEyZTY4MzI5NWVhNjM3MDZkNTc3MjcxM2ZlNzBkMWIyZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%237986CB" style="border-width:0" width="600" height="400" frameborder="0" scrolling="no"></iframe>
+    <div class="profile-container">
+	<img src="seiheki.png" alt="プロフィール画像">
+        <h1>めじあん</h1>
+        <p>うる鯖05番、性癖あるぱかのめじあん！</p>
+        <div class="link-buttons">
+            <a href="#">マシュマロ</a>
+            <a href="#">ほしいものリスト</a>
+            <a href="#">Twitter</a>
         </div>
     </div>
-    
-    <div class='footer'>
-    </div>
 
+    <script>
+        
+    </script>
 </body>
 </html>
-
