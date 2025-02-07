@@ -22,13 +22,83 @@
             font-family: 'Noto Serif JP', sans-serif;
             margin: 0;
             padding: 0;
-            background: #E8998D;
+            background: #bf5f62;
             color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
+	#loading-screen {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100vw;
+	  margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #bf5f62, #bf5f62); /* シックで洗練されたピンク系 */
+            font-family: "MV Boli",Corbel, Avenir, sans-serif;
+            overflow: hidden;
+
+	}
+	.frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5%; /* 枠の高さ */
+            background-color: #dea6a8;
+        }
+
+        .frame-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5%; /* 枠の高さ */
+            background-color: #dea6a8;
+        }
+        .loading-wrapper {
+            text-align: center;
+            position: relative;
+	    
+        }
+
+        .loading-text {
+            font-size: 1.2rem; /* 少し小さく */
+            font-weight: 400;
+            color: white;
+            letter-spacing: 2px;
+            opacity: 0.8;
+            position: absolute;
+            top: -100%;
+            width: 100%;
+        }
+
+        .progress-bar-wrapper {
+            position: relative;
+            width: 400px; /* バーを長く */
+            height: 20px; /* バーを太く */
+            background-color: #dea6a8;
+            border-radius: 80px;
+            overflow: hidden;
+            border: 4px solid #dea6a8; /* ふちを少し可愛く */
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background-color: #9f272b; /* 優しいピンク色で可愛さを加える */
+            border-radius: 80px;
+            transition: width 3s ease-in-out;
+        }
+
+
 
         .profile-container {
             background: #ffffff;
@@ -38,18 +108,18 @@
             width: 500px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             animation: fadeIn 1.5s ease;
-	    border: 2px solid #c21807;
+	    border: 2px solid #9f272b;
         }
 
          .profile-container img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            border: 2px solid #c21807;
+            border: 2px solid #9f272b;
         }
         .profile-container h1 {
             font-size: 1.5em;
-            color: #c21807;
+            color: #9f272b;
             margin-top: 10px;
             font-weight: bold;
         }
@@ -61,15 +131,16 @@
 
         .link-buttons a {
             display: inline-block;
-            margin: 8px;
-            padding: 8px 15px;
+            margin: 4px;
+            padding: 12px 30px;
             text-decoration: none;
             color: #fff;
-            background-color: #c21807;
-            border-radius: 10px;
+            background-color: #9f272b;
+            border-radius: 30px;
             font-size: 0.9em;
             font-weight: bold;
             transition: all 0.3s ease, transform 0.3s ease;
+	    font-family: "MV Boli", 'Noto Serif JP', sans-serif;
         }
 
         .link-buttons a:hover {
@@ -80,19 +151,45 @@
     </style>
 </head>
 <body>
+	<div id="loading-screen">
+  <div class="frame"></div>
+    <div class="loading-wrapper">
+        <div class="loading-text">Now Loading...</div>
+                    <div class="progress-bar-wrapper">
+
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+<div class="frame-bottom"></div>
+
+</div>
     <div class="profile-container">
 	<img src="https://github.com/hallot65/hallot/blob/main/medi_tatie_long.png?raw=true" alt="プロフィール画像">
         <h1>めじあん</h1>
         <p>Noisy Mackerel05番、つまづけカバディーズの赤色担当、性癖あるぱかのめじあん。めじあんに関する各種リンクを貼るよ</p>
         <div class="link-buttons">
-            <a href="https://marshmallow-qa.com/anatamosukonbu?t=MFx9ew&utm_medium=url_text&utm_source=promotion" target="_blank">マシュマロ</a>
-            <a href="https://www.amazon.co.jp/hz/wishlist/ls/3I4UO1DBDFN93?ref_=wl_share" target="_blank">ほしいものリスト</a>
+            <a href="https://marshmallow-qa.com/anatamosukonbu?t=MFx9ew&utm_medium=url_text&utm_source=promotion" target="_blank">Marshmallow</a>
+            <a href="https://www.amazon.co.jp/hz/wishlist/ls/3I4UO1DBDFN93?ref_=wl_share" target="_blank">Wishlist</a>
             <a href="https://x.com/anatamosukonbu" target="_blank">Twitter</a>
         </div>
     </div>
 
     <script>
-        
+	     window.onload = function() {
+            // プログレスバーを満たすアニメーション
+            const progressBar = document.querySelector('.progress-bar');
+            setTimeout(() => {
+                progressBar.style.width = '100%';  // プログレスバーを100%に
+            }, 100);
+        };
+        window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("loading-screen").style.opacity = "0";
+    setTimeout(() => {
+      document.getElementById("loading-screen").style.display = "none";
+    }, 500);
+  }, 4000); // 2秒後にロード画面を消す
+});
     </script>
 </body>
 </html>
